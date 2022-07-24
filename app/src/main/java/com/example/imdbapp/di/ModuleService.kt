@@ -3,6 +3,7 @@ package com.example.imdbapp.di
 import android.content.Context
 import com.example.imdbapp.api.ImdbService
 import com.example.imdbapp.utils.Connectivity
+import com.example.imdbapp.utils.Constants
 import com.example.imdbapp.utils.PrettyPrintLogger
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -70,7 +71,7 @@ class ModuleService {
 
         Retrofit.Builder()
             .client(client)
-            .baseUrl(BASE_URL)
+            .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
 
