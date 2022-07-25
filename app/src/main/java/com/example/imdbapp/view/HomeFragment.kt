@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.example.imdbapp.adapter.HomeAdapter
 import com.example.imdbapp.databinding.FragmentHomeBinding
+import com.example.imdbapp.viewModel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -13,6 +16,9 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private lateinit var homeAdapter: HomeAdapter
+
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,5 +32,32 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initUserInterface()
+        observeImdbList()
     }
+
+    private fun initUserInterface() {
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView() {
+
+        homeAdapter = HomeAdapter()
+        binding.recyclerView.setHasFixedSize(true)
+        binding.recyclerView.adapter = homeAdapter
+
+    }
+
+    private fun observeImdbList() {
+
+        viewModel.batmanImdb.observe(viewLifecycleOwner) { response ->
+
+            homeAdapter.setListImdb(response)
+
+        }
+
+    }
+
+
 }
