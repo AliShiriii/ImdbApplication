@@ -5,7 +5,7 @@ import com.example.imdbapp.model.BatmanModel
 import retrofit2.Response
 import javax.inject.Inject
 
-class BatmanRepository @Inject constructor(private val imdbService: ImdbService) {
+class HomeRepository @Inject constructor(private val imdbService: ImdbService) {
 
     suspend fun getImdb(): Response<List<BatmanModel>>{
 

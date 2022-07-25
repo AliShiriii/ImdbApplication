@@ -6,8 +6,8 @@ buildscript {
 
         dagger_Hilt_vertion = "2.40.4"
         navigation_vertion = "2.5.0"
-        coroutines_core_vertion = "2.6.1"
-        coroutines_android_vertion = "2.6.1"
+        coroutines_core_vertion = "1.4.1"
+        coroutines_android_vertion = "1.4.1"
         retrofit_vertion = "2.9.0"
         retrofit_interceptor_vertion = "4.9.3"
         retrofit_converter_gson_vertion = "2.9.0"
