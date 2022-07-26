@@ -57,21 +57,21 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //Dagger-Hilt
-    implementation "com.google.dagger:hilt-android:$dagger_Hilt_vertion"
-    kapt "com.google.dagger:hilt-android-compiler:$dagger_Hilt_vertion"
+    implementation "com.google.dagger:hilt-android:$dagger_Hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$dagger_Hilt_version"
 
     //Navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_vertion"
-    implementation "androidx.navigation:navigation-ui-ktx:$navigation_vertion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
     //Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_core_vertion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_android_vertion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_core_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_android_version"
 
     //Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_vertion"
-    implementation "com.squareup.okhttp3:logging-interceptor:$retrofit_interceptor_vertion"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_converter_gson_vertion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$retrofit_interceptor_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_converter_gson_version"
 
     //LifeCycle
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -79,10 +79,13 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
 
     //Multidex
-    implementation "androidx.multidex:multidex:$version_multidex"
+    implementation "androidx.multidex:multidex:$multidex_version"
 
     //Sdp
-    implementation "com.intuit.sdp:sdp-android:$sdp_vertion"
+    implementation "com.intuit.sdp:sdp-android:$sdp_version"
+
+    //Coil
+    implementation "io.coil-kt:coil:$coil_version"
 }
 
 kapt {

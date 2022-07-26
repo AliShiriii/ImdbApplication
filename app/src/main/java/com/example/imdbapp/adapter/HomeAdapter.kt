@@ -20,6 +20,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
         fun bind(search: BatmanModel){
 
+
             binding.title.text = search.Search[adapterPosition].Title
             binding.type.text = search.Search[adapterPosition].Type
             binding.year.text = search.Search[adapterPosition].Year

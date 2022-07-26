@@ -4,17 +4,17 @@ buildscript {
 
     ext{
 
-        dagger_Hilt_vertion = "2.40.4"
-        navigation_vertion = "2.5.0"
-        coroutines_core_vertion = "1.4.1"
-        coroutines_android_vertion = "1.4.1"
-        retrofit_vertion = "2.9.0"
-        retrofit_interceptor_vertion = "4.9.3"
-        retrofit_converter_gson_vertion = "2.9.0"
+        dagger_Hilt_version = "2.40.4"
+        navigation_version = "2.5.0"
+        coroutines_core_version = "1.4.1"
+        coroutines_android_version = "1.4.1"
+        retrofit_version = "2.9.0"
+        retrofit_interceptor_version = "4.9.3"
+        retrofit_converter_gson_version = "2.9.0"
         lifecycle_version = "2.5.0"
-        sdp_vertion = "1.1.0"
-        version_multidex = "2.0.1"
-
+        sdp_version = "1.1.0"
+        multidex_version = "2.0.1"
+        coil_version = "1.1.0"
     }
 
     dependencies {
