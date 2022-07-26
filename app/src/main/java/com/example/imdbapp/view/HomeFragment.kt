@@ -6,13 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.imdbapp.R
 import com.example.imdbapp.adapter.HomeAdapter
 import com.example.imdbapp.databinding.FragmentHomeBinding
 import com.example.imdbapp.viewModel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -32,6 +33,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.getImdb()
 
         initUserInterface()
         observeImdbList()
@@ -53,7 +56,7 @@ class HomeFragment : Fragment() {
 
         viewModel.batmanImdb.observe(viewLifecycleOwner) { response ->
 
-            homeAdapter.setListImdb(response)
+            homeAdapter.setListImdb(response.Search)
 
         }
 

@@ -3,14 +3,16 @@ package com.example.imdbapp.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.imdbapp.databinding.HomeItemBinding
 import com.example.imdbapp.model.BatmanModel
+import com.example.imdbapp.model.Search
 
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
-    private var listImdb = emptyList<BatmanModel>()
+    private var listImdb = emptyList<Search>()
 
-    fun setListImdb(listImdb: List<BatmanModel>){
+    fun setListImdb(listImdb: List<Search>){
 
         this.listImdb = listImdb
 
@@ -18,13 +20,13 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
     class HomeViewHolder(private val binding: HomeItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(search: BatmanModel){
+        fun bind(search: Search){
 
-
-            binding.title.text = search.Search[adapterPosition].Title
-            binding.type.text = search.Search[adapterPosition].Type
-            binding.year.text = search.Search[adapterPosition].Year
-            binding.imdbId.text = search.Search[adapterPosition].imdbID
+            binding.LoadingImageView.load(search.Poster)
+            binding.title.text = search.Title
+            binding.type.text = search.Type
+            binding.year.text = search.Year
+            binding.imdbId.text = search.imdbID
 
         }
 

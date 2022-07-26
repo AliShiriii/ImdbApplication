@@ -5,16 +5,19 @@ buildscript {
     ext{
 
         dagger_Hilt_version = "2.40.4"
+        hilt_compiler = "1.0.0-beta01"
+        hilt_androidx_viewmodel = "1.0.0-alpha03"
         navigation_version = "2.5.0"
-        coroutines_core_version = "1.4.1"
-        coroutines_android_version = "1.4.1"
+        coroutines_core_version = "1.4.2"
+        coroutines_android_version = "1.4.2"
         retrofit_version = "2.9.0"
         retrofit_interceptor_version = "4.9.3"
         retrofit_converter_gson_version = "2.9.0"
-        lifecycle_version = "2.5.0"
+        lifecycle_version = "2.3.0"
         sdp_version = "1.1.0"
         multidex_version = "2.0.1"
         coil_version = "1.1.0"
+
     }
 
     dependencies {

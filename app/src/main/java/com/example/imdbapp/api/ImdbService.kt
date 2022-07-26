@@ -1,17 +1,18 @@
 package com.example.imdbapp.api
 
 import com.example.imdbapp.model.BatmanModel
+import com.example.imdbapp.model.Search
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ImdbService {
 
-    @GET("?apikey=3e974fca&amp&s=batman")
-    suspend fun getImdb(): Response<List<BatmanModel>>
+    @GET(".")
+    suspend fun getImdb(
+        @Query("apikey") apikey: String,
+        @Query("s") imdb: String
 
-    @GET("?apikey=3e974fca&amp&i={imdbID}")
-    suspend fun getDetails(): Response<BatmanModel>
-
+    ): Response<BatmanModel>
 
 }
