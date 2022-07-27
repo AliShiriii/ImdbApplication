@@ -3,7 +3,24 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">title</string>
+    <string name="detailsTitle">Title:</string>
     <string name="poster">poster</string>
     <string name="type">type</string>
     <string name="imdbid">imdbId</string>
+    <string name="released">Released:</string>
+    <string name="runtime">Runtime:</string>
+    <string name="year">Year:</string>
+    <string name="rated">Rated:</string>
+    <string name="genre">Genre:</string>
+    <string name="director">Director:</string>
+    <string name="writer">Writer:</string>
+    <string name="actors">Actors:</string>
+    <string name="years">years</string>
+    <string name="rateds">rateds</string>
+    <string name="releaseds">Releaseds</string>
+    <string name="runtimes">Runtimes</string>
+    <string name="genres">Genres</string>
+    <string name="directors">Directors</string>
+    <string name="writers">Writers</string>
+    <string name="actorses">Actorses</string>
 </resources>
