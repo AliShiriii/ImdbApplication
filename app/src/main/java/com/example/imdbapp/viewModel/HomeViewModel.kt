@@ -1,5 +1,6 @@
 package com.example.imdbapp.viewModel
 
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,6 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val homeRepository: HomeRepository) : ViewModel() {
 
+
     private val _batmanImdb = MutableLiveData<BatmanModel>()
     val batmanImdb: LiveData<BatmanModel> = _batmanImdb
 
@@ -22,9 +24,8 @@ class HomeViewModel @Inject constructor(private val homeRepository: HomeReposito
         viewModelScope.launch {
             val response = homeRepository.getImdb()
 
-            if (response.isSuccessful) {
                 _batmanImdb.value = response.body()
-            }
+
         }
     }
 }

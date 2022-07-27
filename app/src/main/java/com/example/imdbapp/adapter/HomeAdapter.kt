@@ -12,10 +12,11 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
     private var listImdb = emptyList<Search>()
 
-    fun setListImdb(listImdb: List<Search>){
+    fun setListImdb(listImdb: MutableList<Search>){
 
         this.listImdb = listImdb
 
+        notifyDataSetChanged()
     }
 
     class HomeViewHolder(private val binding: HomeItemBinding) : RecyclerView.ViewHolder(binding.root) {
