@@ -15,17 +15,14 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val homeRepository: HomeRepository) : ViewModel() {
 
-
     private val _batmanImdb = MutableLiveData<BatmanModel>()
     val batmanImdb: LiveData<BatmanModel> = _batmanImdb
 
-    fun getImdb() {
+    fun getImdb() = viewModelScope.launch {
 
-        viewModelScope.launch {
             val response = homeRepository.getImdb()
 
                 _batmanImdb.value = response.body()
 
-        }
     }
 }
