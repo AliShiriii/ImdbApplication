@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.imdbapp.R
 import com.example.imdbapp.adapter.HomeAdapter
@@ -15,7 +17,7 @@ import com.example.imdbapp.viewModel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment(R.layout.fragment_home), HomeAdapter.OnItemClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -46,7 +48,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun initRecyclerView() {
 
-        homeAdapter = HomeAdapter()
+        homeAdapter = HomeAdapter(this)
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         binding.recyclerView.adapter = homeAdapter
@@ -61,6 +63,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             homeAdapter.setListImdb(response.Search.toMutableList())
 
         }
+
+    }
+
+    override fun onItemClick(id: String) {
+
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(id)
+        findNavController().navigate(action)
 
     }
 
