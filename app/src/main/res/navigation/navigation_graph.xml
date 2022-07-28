@@ -18,9 +18,5 @@
         android:id="@+id/detailsFragment"
         android:name="com.example.imdbapp.view.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" >
-        <argument
-            android:name="detailsId"
-            app:argType="string" />
-    </fragment>
+        tools:layout="@layout/fragment_details" />
 </navigation>

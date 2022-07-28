@@ -38,8 +38,6 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
 
     private fun observeDetails(){
 
-        viewModel.getDetails()
-
         viewModel.details.observe(viewLifecycleOwner){ details ->
 
             binding.imageDetails.load(details.Poster)

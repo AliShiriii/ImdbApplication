@@ -17,9 +17,9 @@ class DetailsViewModel @Inject constructor(private val detailsRepository: Detail
     private val _details = MutableLiveData<Details>()
     val details: LiveData<Details> = _details
 
-    fun getDetails() = viewModelScope.launch {
+    fun getDetails(imdbId: String) = viewModelScope.launch {
 
-        val details = detailsRepository.getDetails()
+        val details = detailsRepository.getDetails(imdbId)
 
         _details.value = details.body()
 
