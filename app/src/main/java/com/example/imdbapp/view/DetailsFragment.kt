@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import coil.load
 import com.example.imdbapp.R
 import com.example.imdbapp.databinding.FragmentDetailsBinding
-import com.example.imdbapp.viewModel.DetailsViewModel
+import com.example.imdbapp.viewModel.ImdbViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,7 +18,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
     private var _binding: FragmentDetailsBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: DetailsViewModel by viewModels()
+    private val viewModel: ImdbViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

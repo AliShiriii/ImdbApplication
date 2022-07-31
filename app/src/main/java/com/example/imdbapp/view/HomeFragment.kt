@@ -11,8 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.imdbapp.R
 import com.example.imdbapp.adapter.HomeAdapter
 import com.example.imdbapp.databinding.FragmentHomeBinding
-import com.example.imdbapp.viewModel.DetailsViewModel
-import com.example.imdbapp.viewModel.HomeViewModel
+import com.example.imdbapp.viewModel.ImdbViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,8 +21,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeAdapter.OnItemClickLi
     private val binding get() = _binding!!
     private lateinit var homeAdapter: HomeAdapter
 
-    private val homeFragmentViewModel: HomeViewModel by viewModels()
-    private val detailsViewModel: DetailsViewModel by viewModels()
+    private val imdbViewModel: ImdbViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,18 +55,17 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeAdapter.OnItemClickLi
 
     private fun observeImdbList() {
 
-        homeFragmentViewModel.getImdb()
-        homeFragmentViewModel.batmanImdb.observe(viewLifecycleOwner) { response ->
+        imdbViewModel.getImdb()
+        imdbViewModel.batmanImdb.observe(viewLifecycleOwner) { response ->
 
             homeAdapter.setListImdb(response.Search.toMutableList())
 
         }
-
     }
 
     override fun onItemClick(id: String) {
 
-        detailsViewModel.getDetails(id)
+        imdbViewModel.getDetails(id)
 
         val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment()
         findNavController().navigate(action)

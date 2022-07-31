@@ -2,6 +2,8 @@ package com.example.imdbapp.di
 
 import android.content.Context
 import com.example.imdbapp.api.ImdbService
+import com.example.imdbapp.repository.ImdbDataRepository
+import com.example.imdbapp.repository.ImdbRepository
 import com.example.imdbapp.utils.Connectivity
 import com.example.imdbapp.utils.Constants
 import com.example.imdbapp.utils.PrettyPrintLogger
@@ -22,7 +24,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class ModuleService {
+object ModuleService {
 
     @Singleton
     @Provides
@@ -81,4 +83,7 @@ class ModuleService {
     fun provideMovieApi(retrofit: Retrofit): ImdbService =
         retrofit.create(ImdbService::class.java)
 
+    @Provides
+    fun provideImdbDataRepository(repository: ImdbDataRepository): ImdbRepository =
+        repository
 }
